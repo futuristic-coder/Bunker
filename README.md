@@ -1,7 +1,3 @@
-Here’s the updated **README.md** with all mentions of **Stayzy** replaced by **Bunker**:
-
----
-
 # **Bunker** 🌍✨  
 Your gateway to finding unique stays and unforgettable travel experiences.
 
