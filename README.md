@@ -1,12 +1,12 @@
-Here’s the updated **README.md** with the name changed to **Stayzy**:
+Here’s the updated **README.md** with all mentions of **Stayzy** replaced by **Bunker**:
 
 ---
 
-# **Stayzy** 🌍✨  
+# **Bunker** 🌍✨  
 Your gateway to finding unique stays and unforgettable travel experiences.
 
 ## **Table of Contents**
-- [About Stayzy](#about-stayzy)
+- [About Bunker](#about-bunker)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
 - [Installation Guide](#installation-guide)
@@ -17,8 +17,8 @@ Your gateway to finding unique stays and unforgettable travel experiences.
 
 ---
 
-## **About Stayzy**  
-Stayzy is a platform designed to connect travelers with unique accommodations and experiences worldwide. Whether you're seeking a cozy cabin in the mountains, a beachfront villa, or an urban apartment in the city center, Stayzy has something for everyone. Our mission is to make travel easy, accessible, and memorable for all.
+## **About Bunker**  
+Bunker is a platform designed to connect travelers with unique accommodations and experiences worldwide. Whether you're seeking a cozy cabin in the mountains, a beachfront villa, or an urban apartment in the city center, Bunker has something for everyone. Our mission is to make travel easy, accessible, and memorable for all.
 
 ---
 
@@ -69,8 +69,8 @@ Stayzy is a platform designed to connect travelers with unique accommodations an
 ### **Steps**
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/futuristic-coder/stayzy.git
-   cd stayzy
+   git clone https://github.com/futuristic-coder/bunker.git
+   cd bunker
    ```
 
 2. **Install dependencies**  
@@ -108,7 +108,7 @@ Stayzy is a platform designed to connect travelers with unique accommodations an
 Here's an overview of the project's folder structure for better understanding:
 
 ```
-stayzy/
+bunker/
 │
 ├── frontend/                 # React.js frontend code
 │   ├── public/               # Static files
@@ -137,7 +137,7 @@ stayzy/
 ---
 
 ## **Contributing**
-We welcome contributions to Stayzy! Follow these steps:  
+We welcome contributions to Bunker! Follow these steps:  
 1. Fork the repository.  
 2. Create a new branch for your feature or bug fix:  
    ```bash
@@ -159,3 +159,5 @@ We welcome contributions to Stayzy! Follow these steps:
 This project is licensed under the [MIT License](LICENSE).
 
 ---
+
+Let me know if further changes are needed! 🚀
