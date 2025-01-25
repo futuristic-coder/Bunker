@@ -17,6 +17,17 @@ router.route("/")
 
 router.get('/search',listingController.searchListings);
 
+router.get('/filter', async (req, res) => {
+    const { category } = req.query; // Get category from query string
+    // console.log('Category received:', category); // // Adjust the query to check if the category is part of the array
+    const listings = await Listing.find({
+        category: { $regex: new RegExp(`^${category}$`, 'i') }
+      });
+      
+    //   console.log('Listings found:', listings); // Log the listings to debug
+      res.json(listings);
+});
+
 
 //New Route
 router.get("/new",isLoggedIn, listingController.renderNewForm);
