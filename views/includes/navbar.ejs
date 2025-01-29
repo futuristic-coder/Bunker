@@ -1,53 +1,83 @@
 <style>
-  .btn-search{
-    background-color: black;
-    color: aqua;
-    border-radius: 25px;
-    padding: 0 1rem 0 1rem;
-  }
-  .btn-search:hover{
-    background-color: black;
-    color: aqua;
-  }
-  .btn-search i{
-    display: inline;
-    margin-right: 0.5rem;
-  }
-  .search-input{
-    border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
-  }
+  /* Dropdown Styling */
+.dropdown-menu {
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    min-width: 200px;
+}
+.brand-icon img{
+  width:30px;
+  height: auto;
+}
+
+/* Dropdown Header */
+.dropdown-header {
+    color: #343a40;
+    font-size: 1rem;
+}
+
+/* Dropdown Items Hover Effect */
+.dropdown-item:hover {
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+/* Divider Styling */
+.dropdown-divider {
+    border-color: #dee2e6;
+}
+
 </style>
-<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
-    <button
-      class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNavAltMarkup">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm border-bottom">
+  <div class="container">
+    <!--Logo -->
+    <a class="navbar-brand fw-bold" href="/">
+      <span class="brand-icon"><img src="../Image/Icon.png"></span>
+      <span class="brand-text">FortStay</span>
+    </a>
+
+    <!-- Toggle Button for Mobile View -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" href="/">Home</a>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Search Form -->
+      <form class="d-flex mx-auto my-2 my-lg-0 position-relative" action="/listings/search" role="search" method="get">
+        <input class="form-control me-2 rounded-pill ps-5" type="search" name="query" placeholder="Search destinations" aria-label="Search" />
+        <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+      </form>
+    
+    <!-- Navigation Links -->
+    <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/listings">Explore</a>
-       </div>
-       <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search" class="d-flex mx-auto my-2 my-lg-0 position-relative" action="/listings/search" method="get">
-          <input class="form-control me-2 search-input" type="search" name="query" placeholder="Search destinations" aria-label="Search">
-          <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-        </form>
-       </div>
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Add new Listings</a>
-        <% if(!currUser) { %>
-          <a class="nav-link " href="/signup"><b>Signup</b></a>
-          <a class="nav-link" href="/login"><b>Log in</b></a>
-          <% } %> <% if(currUser) { %>
-            <a class="nav-link" href="/logout"><b>Log out</b></a>
-          <% } %> 
-      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/listings/new">Host</a>
+      </li>
+
+        <!-- Profile Dropdown -->
+        <li class="nav-item dropdown ms-3">
+          <a class="btn  nav-link rounded-pill px-3 dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user me-2"></i><%= currUser ? currUser.username : 'Guest' %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="profileDropdown">
+            <% if(!currUser) { %>
+              <li><a class="dropdown-item" href="/signup"><i class="fa-solid fa-user-plus me-2"></i>Sign Up</a></li>
+              <li><a class="dropdown-item" href="/login"><i class="fa-solid fa-right-to-bracket me-2"></i>Login</a></li>
+            <% } else { %>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
+            <% } %>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
