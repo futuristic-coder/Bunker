@@ -15,8 +15,10 @@ router.route("/")
     .get( wrapAsync(listingController.index))
     .post( isLoggedIn, upload.single("listing[image]"), validateListing, wrapAsync(listingController.createListing));
 
+//Search route
 router.get('/search',listingController.searchListings);
 
+//Filter route (search by category)
 router.get('/filter', async (req, res) => {
     const { category } = req.query; // Get category from query string
     // console.log('Category received:', category); // // Adjust the query to check if the category is part of the array
@@ -27,7 +29,6 @@ router.get('/filter', async (req, res) => {
     //   console.log('Listings found:', listings); // Log the listings to debug
       res.json(listings);
 });
-
 
 //New Route
 router.get("/new",isLoggedIn, listingController.renderNewForm);
