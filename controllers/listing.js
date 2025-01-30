@@ -1,4 +1,4 @@
- const Listing = require("../model/listing");
+const Listing = require("../model/listing");
 
 module.exports.index = async (req, res) => {
     const allListings = await Listing.find({});
@@ -26,7 +26,6 @@ module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
 };
 
-
 module.exports.showListing = async (req, res) => {
     let {id} = req.params;
     const listing = await Listing.findById(id).populate({path:"reviews", populate:{path: "author",}}).populate("owner");
@@ -36,7 +35,6 @@ module.exports.showListing = async (req, res) => {
     }
     res.render("listings/show.ejs", {listing});
 };
-
 
 module.exports.createListing = async (req, res, next) => {
     let url = req.file.path;
