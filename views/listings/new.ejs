@@ -1,52 +1,61 @@
 <% layout("/layouts/boilerplate")%>
 <body>
-<div class="row">
-    <div class="col-8 offset-2">
-    <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
-        <div class="mb-3">
-            <lable for="title" class="form-label">Title</lable>
-            <input name="listing[title]" placeholder="Enter title" type="text" class="form-control" required>
-            <div class="valid-feedback">!This title is sure to grab attention!</div>
-            <div class="invalid-feedback">Title needs improvement!</div>     
-        </div>
-        <div class="mb-3">
-            <lable for="description" class="form-label">Description</lable>
-            <textarea name="listing[description]" placeholder="Enter Description" class="form-control" required></textarea>
-            <div class="valid-feedback">Description looks great!</div>
-            <div class="invalid-feedback">Improve the description!</div>
-
-        </div>
-        <div class="mb-3">
-            <lable for="image" class="form-label">Upload Image</lable>
-            <input name="listing[image]" type="file" class="form-control" required>
-        </div>
-        <div class="row">
-            <div class="mb-3 col-md-4">
-                <lable for="price" class="form-label">Price</lable>
-                <input name="listing[price]" placeholder="Enter Price" type="number" class="form-control" required>
-                <div class="valid-feedback">Price is a good choice!</div>
-                <div class="invalid-feedback">Price needs improvement!</div>
+    <div class="container py-5 d-flex justify-content-center align-items-center min-vh-100 mx-5">
+        <div class="row justify-content-center w-100">
+            <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="card shadow-lg border-0" style="width: 85%;">
+                    <div class="card-header text-center">
+                        <h3>Create a New Listing</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="title" class="form-label fw-bold">Title</label>
+                                <input name="listing[title]" placeholder="Enter title" type="text" class="form-control" required>
+                                <div class="valid-feedback">This title is sure to grab attention!</div>
+                                <div class="invalid-feedback">Title needs improvement!</div>     
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label fw-bold">Description</label>
+                                <textarea name="listing[description]" placeholder="Enter Description" class="form-control" required></textarea>
+                                <div class="valid-feedback">Description looks great!</div>
+                                <div class="invalid-feedback">Improve the description!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label fw-bold">Upload Image</label>
+                                <input name="listing[image]" type="file" class="form-control" required>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col-md-4">
+                                    <label for="price" class="form-label fw-bold">Price</label>
+                                    <input name="listing[price]" placeholder="Enter Price" type="number" class="form-control" required>
+                                    <div class="valid-feedback">Price is a good choice!</div>
+                                    <div class="invalid-feedback">Price needs improvement!</div>
+                                </div>
+                                <div class="mb-3 col-md-8">
+                                    <label for="country" class="form-label fw-bold">Country</label>
+                                    <input name="listing[country]" placeholder="Enter country" type="text" class="form-control" required>
+                                    <div class="valid-feedback">Country is a good choice!</div>
+                                    <div class="invalid-feedback">Enter a valid country!</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="location" class="form-label fw-bold">Location</label>
+                                <input name="listing[location]" placeholder="Enter location" type="text" class="form-control" required>
+                                <div class="valid-feedback">Location looks fine!</div>
+                                <div class="invalid-feedback">Invalid location details!</div>
+                            </div>
+                            <div class="d-grid gap-2 mb-3">
+                                <button class="btn btn-dark btn-lg">Add</button>
+                            </div>
+                            <!-- Cancel Button -->
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-secondary btn-lg" onclick="window.history.back();">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3 col-md-8">
-                <lable for="country" class="form-label">Country</lable>
-                <input name="listing[country]" placeholder="Enter country" type="text" class="form-control" required>
-                <div class="valid-feedback">Country is a good choice!</div>
-                <div class="invalid-feedback">Enter a valid country!</div>
-            </div>
         </div>
-        <div class="mb-3">
-            <lable for="location" class="form-label">Location</lable>
-            <input name="listing[location]" placeholder="Enter location" type="text" class="form-control" required>
-            <div class="valid-feedback">Location looks fine!</div>
-            <div class="invalid-feedback">Invalid location details!</div>
-        </div>
-        
-        <br>
-        <button class="btn btn-dark add-btn">
-            Add
-        </button>
-    </form>
     </div>
-</div>
 </body>
